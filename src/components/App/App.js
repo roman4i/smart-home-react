@@ -1,7 +1,10 @@
+import React from "react";
+import Header from "../../views/Header/Header";
+
 function App() {
   return (
     <div className="App">
-      Raw app
+      <Header />
     </div>
   );
 }
