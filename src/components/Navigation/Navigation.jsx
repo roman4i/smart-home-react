@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navigation.scss";
 
 const links = [
     {
-        link: '/home',
+        link: '/',
         text: 'Home'
     },
     {
@@ -14,7 +15,7 @@ const links = [
 
 const Navigation = () => {
     const Buttons = links.map((button, num) => {
-        return (<a href={button.link} key={num}>{button.text}</a>)
+        return (<Link to={button.link} key={num}>{button.text}</Link>)
     })
 
     return (
