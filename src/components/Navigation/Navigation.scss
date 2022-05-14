@@ -1,0 +1,22 @@
+.navButtonsContainer {
+    overflow: hidden;
+    border-bottom: 2px solid darkslategray;
+    background-color: white;
+}
+
+.navButtonsContainer a {
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: black;
+}
+
+.navButtonsContainer a:hover {
+    background-color: lightgreen;
+}
+
+.navButtonsContainer a.active {
+    background-color: darkolivegreen;
+}
