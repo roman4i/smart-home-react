@@ -1,0 +1,24 @@
+.sensorCard {
+    width: auto;
+    height: auto;
+    border-radius: 10%;
+    border: black 2px solid;
+    margin-right: 20px;
+    padding: 15px;
+}
+
+.cardTitle {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.sensorString {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sensorString div {
+    text-decoration: darkolivegreen;
+    margin-bottom: 20px;
+}
