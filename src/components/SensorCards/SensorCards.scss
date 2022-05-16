@@ -1,10 +1,25 @@
 .sensorCard {
-    width: auto;
-    height: auto;
-    border-radius: 10%;
-    border: black 2px solid;
+    width: 150px;
+    height: 218px;
+    border: black 1px solid;
     margin-right: 20px;
     padding: 15px;
+    box-shadow: 3px 3px 9px firebrick;
+    background-color: white;
+    transition: scale 1s, margin 1s;
+}
+
+.sensorCard:hover {
+    scale: 1.2;
+    z-index: 10;
+    margin: 30px;
+}
+
+.cardTopImage {
+    background-image: url("../../assets/lamps-ext.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 60px;
 }
 
 .cardTitle {
@@ -16,9 +31,9 @@
 .sensorString {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .sensorString div {
     text-decoration: darkolivegreen;
-    margin-bottom: 20px;
 }
