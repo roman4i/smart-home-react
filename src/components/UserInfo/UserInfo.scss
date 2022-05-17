@@ -17,5 +17,9 @@
 .userNameContainer {
     margin-top: 8px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.userLogin {
+    text-decoration: underline;
 }

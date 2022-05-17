@@ -5,7 +5,7 @@ const UserInfoUsername = () => {
     return (
         <div className="userNameContainer">
             <div>Hello </div>
-            <div> User</div>
+            <div className="userLogin"> User</div>
         </div>
     )
 }

@@ -12,6 +12,7 @@ const Card = (props) => {
 
     return (
         <div className="sensorCard">
+            <div className="cardTopImage"></div>
             <div className="cardTitle">{title}</div>
             {SensorsList}
         </div>

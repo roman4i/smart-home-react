@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "../../views/Header/Header";
 import Navigation from "../Navigation/Navigation";
 import HomePage from "../../views/Home/HomePage.";
+import SettingsPage from "../../views/Settings/SettingsPage";
 import Footer from "../../views/Footer/Footer";
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
       <Navigation />
       <Routes>
         <Route index element={<HomePage />} />
-        <Route path="settings" element={<div>Settings</div>} />
+        <Route path="settings" element={<SettingsPage />} />
         <Route path="*" element={<div>Error</div>} />
       </Routes>
       <Footer />
