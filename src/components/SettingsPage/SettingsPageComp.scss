@@ -4,6 +4,11 @@
     width: max-content;
 }
 
+.userSettingsString {
+    display: flex;
+    justify-content: space-between;
+}
+
 .sensorsSettings {
     border: 2px solid black;
 }
