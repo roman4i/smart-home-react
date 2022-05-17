@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "../../components/SensorCards/Card";
-import { sensorsData } from "../../store/fake-sensors";
+import GlobalContext from "../../store/Context";
 import "./HomePage.scss";
 
 const HomePage = () => {
+    const {sensorsData} = useContext(GlobalContext);
     const Cards = sensorsData.map((card, key) => 
         <Card title={card.name} sensors={card.val} key={key} />
     )
