@@ -13,12 +13,25 @@ function App() {
     login: "User",
     color: "lightgray",
   }
-  const [userInfo, setUserInfo] = useState(baseUserInfo)
+  const [userInfo, setUserInfo] = useState(baseUserInfo);
+
+  const defSensorsData = sensorsData.map(val => {
+    const defs = {
+      name: val.name,
+      isShown: true,
+    }
+
+    return (
+      defs
+    )
+  })
+  const [shownSensors, setShownSensors] = useState(defSensorsData);
 
   const contextVal = {
     userData: userInfo,
     setUserData: setUserInfo,
     sensorsData: sensorsData,
+    sensorsToShow: [shownSensors, setShownSensors],
   }
 
   return (
