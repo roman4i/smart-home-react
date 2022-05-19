@@ -26,12 +26,11 @@ const UserInfoSettings = (props) => {
                 })
             break;
         }
-        console.log(editedData);
     }
 
     return (
         <div className="userInfoSettings">
-            <div>User`s Info</div>
+            <div className="settingsContainerTitle">User`s Info</div>
             <div className="userSettingsString">
                 <div>Login:</div>
                 { isEditing ?

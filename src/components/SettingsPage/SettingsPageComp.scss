@@ -1,7 +1,15 @@
+.settingsContainerTitle {
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
 .userInfoSettings {
+    text-align: center;
     border: 2px solid black;
-    padding: 5px;
-    width: max-content;
+    padding: 8px;
+    width: 130px;
+    height: min-content;
+    margin-right: 30px;
 }
 
 .userSettingsString {
@@ -9,6 +17,21 @@
     justify-content: space-between;
 }
 
+.userSettingsString input {
+    width: 80px;
+}
+
 .sensorsSettings {
+    text-align: center;
     border: 2px solid black;
+    padding: 8px;
+}
+
+.sensorcCountStr {
+    text-align: left;
+}
+
+.sensorsSettingsString {
+    display: flex;
+    justify-content: space-between;
 }

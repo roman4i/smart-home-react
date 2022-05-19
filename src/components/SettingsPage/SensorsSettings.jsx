@@ -15,9 +15,9 @@ const SensorsSettings = (props) => {
 
     const sensArray = sensors.map((sensor, num) => {
         return (
-        <>
-            <div key={num}>
-                {sensor.name + " " + sensor.val.length + " strings"}
+        <div className="sensorsSettingsString" key={num}>
+            <div>
+                {sensor.name + ": " + sensor.val.length + " strings"}
             </div>
             <input 
                 type="checkbox" 
@@ -25,16 +25,18 @@ const SensorsSettings = (props) => {
                 onChange={handleCheckbox}
                 checked={toShow[0][num].isShown}
             />
-        </>
+        </div>
         )
     })
 
     return (
         <div className="sensorsSettings">
-            <div>Sensors Info</div>
-            <div>{`Sensors in system: ${sensors.length}`}</div>
+            <div className="settingsContainerTitle">Sensors Info</div>
             <div>
-                {sensArray}
+                <div className="sensorcCountStr">{`Sensors in system: ${sensors.length}`}</div>
+                <div>
+                    {sensArray}
+                </div>
             </div>
         </div>
     )
