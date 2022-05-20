@@ -1,0 +1,50 @@
+.settingsContainerTitle {
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+.userInfoSettings {
+    text-align: center;
+    border: 2px solid black;
+    padding: 8px;
+    width: 130px;
+    height: min-content;
+    margin-right: 30px;
+}
+
+.userInfoSettings input[type=button] {
+    margin-top: 5px;
+}
+
+.userSettingsString {
+    display: flex;
+    justify-content: space-between;
+}
+
+.userSettingsString input {
+    width: 80px;
+}
+
+.sensorsSettings {
+    text-align: center;
+    border: 2px solid black;
+    padding: 8px;
+}
+
+.sensorsSettings input {
+    margin-top: 5px;
+}
+
+.sensorcCountStr {
+    text-align: left;
+}
+
+.sensorsSettingsString {
+    display: flex;
+    justify-content: space-between;
+}
+
+.settingsBtnsGroup {
+    display: flex;
+    justify-content: space-between;
+}
