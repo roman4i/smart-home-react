@@ -6,7 +6,7 @@ import HomePage from "../../views/Home/HomePage.";
 import SettingsPage from "../../views/Settings/SettingsPage";
 import Footer from "../../views/Footer/Footer";
 import GlobalContext from "../../store/Context";
-import { sensorsData } from "../../store/fake-sensors";
+import { sensorsData as sensorsDataInit } from "../../store/fake-sensors";
 
 function App() {
   const baseUserInfo = {
@@ -14,23 +14,23 @@ function App() {
     color: "lightgray",
   }
   const [userInfo, setUserInfo] = useState(baseUserInfo);
+  const [sensorsData, setSesorsData] = useState(sensorsDataInit);
 
   const defSensorsData = sensorsData.map(val => {
     const defs = {
       name: val.name,
       isShown: true,
     }
-
-    return (
-      defs
-    )
+    return (defs)
   })
+
   const [shownSensors, setShownSensors] = useState(defSensorsData);
 
   const contextVal = {
     userData: userInfo,
     setUserData: setUserInfo,
     sensorsData: sensorsData,
+    "setSensorsData": setSesorsData,
     sensorsToShow: [shownSensors, setShownSensors],
   }
 

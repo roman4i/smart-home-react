@@ -6,12 +6,12 @@ import GlobalContext from "../../store/Context";
 import "./SettingsPage.scss";
 
 const SettingsPage = () => {
-    const { userData, sensorsData, setUserData, sensorsToShow } = useContext(GlobalContext)
+    const { userData, setUserData } = useContext(GlobalContext)
 
     return (
         <div className="settingsPlaceholder">
             <UserInfoSettings login={userData.login} setLogin={setUserData} color={userData.color} />
-            <SensorsSettings sensors={sensorsData} toShow={sensorsToShow} />
+            <SensorsSettings />
         </div>
     )
 }

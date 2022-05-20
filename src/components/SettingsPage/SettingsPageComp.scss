@@ -12,6 +12,10 @@
     margin-right: 30px;
 }
 
+.userInfoSettings input[type=button] {
+    margin-top: 5px;
+}
+
 .userSettingsString {
     display: flex;
     justify-content: space-between;
@@ -27,11 +31,20 @@
     padding: 8px;
 }
 
+.sensorsSettings input {
+    margin-top: 5px;
+}
+
 .sensorcCountStr {
     text-align: left;
 }
 
 .sensorsSettingsString {
+    display: flex;
+    justify-content: space-between;
+}
+
+.settingsBtnsGroup {
     display: flex;
     justify-content: space-between;
 }
