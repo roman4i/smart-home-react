@@ -15,4 +15,6 @@ $textPadding: 3px;
     background-color: white;
     width: 90%;
     padding: $textPadding;
+    display: flex;
+    justify-content: space-between;
 }
