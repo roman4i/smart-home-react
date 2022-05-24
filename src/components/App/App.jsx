@@ -7,6 +7,7 @@ import SettingsPage from "../../views/Settings/SettingsPage";
 import Footer from "../../views/Footer/Footer";
 import GlobalContext from "../../store/Context";
 import { sensorsData as sensorsDataInit } from "../../store/fake-sensors";
+import formatLoggerData from "../../utils/loggerFormater";
 
 function App() {
   const baseUserInfo = {
@@ -26,12 +27,18 @@ function App() {
 
   const [shownSensors, setShownSensors] = useState(defSensorsData);
 
+  const [loggedData, setLoggedData] = useState(formatLoggerData([], 'Initialization'))
+
   const contextVal = {
     userData: userInfo,
     setUserData: setUserInfo,
     sensorsData: sensorsData,
     "setSensorsData": setSesorsData,
     sensorsToShow: [shownSensors, setShownSensors],
+    logger: {
+      loggedData: loggedData,
+      setLoggedData: setLoggedData,
+    },
   }
 
   return (

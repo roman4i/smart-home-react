@@ -2,9 +2,10 @@ import React, {useState, useContext} from "react";
 import AddSensorsCard from "./AddSensorsCardData";
 import insertSensorCard from "../../utils/addSensorsCard";
 import GlobalContext from "../../store/Context";
+import formatLoggerData from "../../utils/loggerFormater";
 
 const SensorsSettings = (props) => {
-    const { setSensorsData, sensorsData, sensorsToShow } = useContext(GlobalContext);
+    const { setSensorsData, sensorsData, sensorsToShow, logger } = useContext(GlobalContext);
 
     const [changeCards, setChangeCards] = useState(false);
 
@@ -20,8 +21,12 @@ const SensorsSettings = (props) => {
         sensorsToShow[1](old => {
            return (old.map( val => {
                 const toReturn = val.name === name ? {...val, isShown: checked} : val;
-                return(toReturn)
+                return toReturn
             }))
+        })
+        logger.setLoggedData( old => {
+            const checkedPhrase = checked ? 'showing' : 'hided'
+            return formatLoggerData(old, 'Card "' + name + '" now is ' + checkedPhrase)
         })
     }
 
@@ -57,13 +62,20 @@ const SensorsSettings = (props) => {
                             if(element.name === newCardData.cardName) newShown = false;
                         });
                         if (newShown) {
-                            sensorsToShow[1]( old => {
+                            sensorsToShow[1]( oldSens => {
                                 return (
-                                    [...old, {
+                                    [...oldSens, {
                                         name:newCardData.cardName,
                                         isShown: true,
                                     }]
                                 )
+                            })
+                            logger.setLoggedData( oldVal => {
+                                return formatLoggerData(oldVal, 'Added new card - ' + newCardData.cardName )
+                            })
+                        } else {
+                            logger.setLoggedData( oldVal => {
+                                return formatLoggerData(oldVal, `Added string "${newCardData.valName}" to "${newCardData.cardName}"`)
                             })
                         }
                         return insertSensorCard(old, newCardData);

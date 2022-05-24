@@ -5,7 +5,7 @@ import "./Footer.scss";
 const Footer = () => {
     return (
         <footer >
-            <FooterText text="Footer line, for some info" />
+            <FooterText />
         </footer>
     )
 }
