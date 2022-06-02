@@ -15,7 +15,7 @@ function App() {
     color: "lightgray",
   }
   const [userInfo, setUserInfo] = useState(baseUserInfo);
-  const [sensorsData, setSesorsData] = useState(sensorsDataInit);
+  const [sensorsData, setSesorsData] = useState([]);
 
   const defSensorsData = sensorsData.map(val => {
     const defs = {
