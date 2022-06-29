@@ -1,12 +1,16 @@
+@mixin container-base {
+    text-align: center;
+    border: 2px solid black;
+    padding: 8px;
+}
+
 .settingsContainerTitle {
     text-decoration: underline;
     margin-bottom: 5px;
 }
 
 .userInfoSettings {
-    text-align: center;
-    border: 2px solid black;
-    padding: 8px;
+    @include container-base;
     width: 130px;
     height: min-content;
     margin-right: 30px;
@@ -26,9 +30,8 @@
 }
 
 .sensorsSettings {
-    text-align: center;
-    border: 2px solid black;
-    padding: 8px;
+    @include container-base;
+    margin-right: 30px;
 }
 
 .sensorsSettings input {
@@ -47,4 +50,8 @@
 .settingsBtnsGroup {
     display: flex;
     justify-content: space-between;
+}
+
+.addCardLinkContainer {
+    @include container-base;
 }

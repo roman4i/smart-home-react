@@ -11,7 +11,7 @@ const HomePage = () => {
         Cards = sensorsData.map((card, key) => 
             {
             return(
-                sensorsToShow[0][key].isShown && <Card title={card.name} sensors={card.val} key={key} />
+                sensorsToShow[0][key]?.isShown && <Card title={card.name} sensors={card.val} key={key} />
             )}
         )
     } else {

@@ -1,20 +1,9 @@
-import React, {useState, useContext} from "react";
-import AddSensorsCard from "./AddSensorsCardData";
-import insertSensorCard from "../../utils/addSensorsCard";
+import React, { useContext} from "react";
 import GlobalContext from "../../store/Context";
 import formatLoggerData from "../../utils/loggerFormater";
 
-const SensorsSettings = (props) => {
-    const { setSensorsData, sensorsData, sensorsToShow, logger } = useContext(GlobalContext);
-
-    const [changeCards, setChangeCards] = useState(false);
-
-    const basicCard = {
-        cardName: "",
-        valName: "",
-        val: "",
-    }
-    const [newCardData, setNewCardData] = useState(basicCard);
+const SensorsSettings = () => {
+    const { sensorsData, sensorsToShow, logger } = useContext(GlobalContext);
 
     const handleCheckbox = (event) => {
         const {name, checked} = event.target;
@@ -30,66 +19,21 @@ const SensorsSettings = (props) => {
         })
     }
 
-    const sensArray = sensorsData.map((sensor, num) => {
+    const sensArray = sensorsToShow[0]?.map((val, num) => {
         return (
-        <div className="sensorsSettingsString" key={num}>
-            <div>
-                {sensor.name + ": " + sensor.val.length + " strings"}
+            <div className="sensorsSettingsString" key={num}>
+                <div>
+                    {sensorsData[num]?.name + ": " + sensorsData[num]?.val.length + " strings"}
+                </div>
+                <input 
+                    type="checkbox" 
+                    name={sensorsData[num]?.name} 
+                    onChange={handleCheckbox}
+                    checked={val.isShown}
+                />
             </div>
-            <input 
-                type="checkbox" 
-                name={sensor.name} 
-                onChange={handleCheckbox}
-                checked={sensorsToShow[0][num].isShown}
-            />
-        </div>
         )
     })
-
-    const [inputError, setInputError] = useState(false)
-
-    const onChangeCard = (event) => {
-        const {value} = event.target;
-
-        if (value === "Save") {
-            const showError = (
-                (newCardData.cardName === "") || (newCardData.valName === "") || (newCardData.val === "")) ?
-                 true : false
-                if (!showError) {
-                    setSensorsData( old => {
-                        let newShown = true;
-                        old.forEach(element => {
-                            if(element.name === newCardData.cardName) newShown = false;
-                        });
-                        if (newShown) {
-                            sensorsToShow[1]( oldSens => {
-                                return (
-                                    [...oldSens, {
-                                        name:newCardData.cardName,
-                                        isShown: true,
-                                    }]
-                                )
-                            })
-                            logger.setLoggedData( oldVal => {
-                                return formatLoggerData(oldVal, 'Added new card - ' + newCardData.cardName )
-                            })
-                        } else {
-                            logger.setLoggedData( oldVal => {
-                                return formatLoggerData(oldVal, `Added string "${newCardData.valName}" to "${newCardData.cardName}"`)
-                            })
-                        }
-                        return insertSensorCard(old, newCardData);
-                })
-                setNewCardData(basicCard)
-                setChangeCards(old => !old)
-            } else {
-                    setInputError(true);
-                }
-        } else {
-            setChangeCards(old => !old)
-            setInputError(false)
-        }
-    }
 
     return (
         <div className="sensorsSettings">
@@ -99,11 +43,6 @@ const SensorsSettings = (props) => {
                 <div>
                     {sensArray}
                 </div>
-            </div>
-            { changeCards && <AddSensorsCard setData={setNewCardData} errors={inputError} />}
-            <div className={changeCards ? "settingsBtnsGroup" : ""}>
-                <input type="button" value={changeCards ? "Save" : "Add"} onClick={onChangeCard} />
-                {changeCards && <input type="button" value="Cancel" onClick={onChangeCard} />}
             </div>
         </div>
     )
