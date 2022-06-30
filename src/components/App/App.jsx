@@ -47,9 +47,9 @@ function App() {
         <Header />
         <Navigation />
         <Routes>
-          <Route index element={<HomePage />} />
-          <Route path="settings" element={<SettingsPage />} />
-          <Route path="*" element={<div>Error</div>} />
+          <Route path="smart-home-react/" element={<HomePage />} />
+          <Route path="smart-home-react/settings" element={<SettingsPage />} />
+          <Route path="*" element={<div>Routing error</div>} />
         </Routes>
         <Footer />
       </div>

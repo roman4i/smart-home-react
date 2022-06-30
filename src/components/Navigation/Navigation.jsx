@@ -4,11 +4,11 @@ import "./Navigation.scss";
 
 const links = [
     {
-        link: '/',
+        link: 'smart-home-react/',
         text: 'Home'
     },
     {
-        link: '/settings',
+        link: 'smart-home-react/settings',
         text: 'Settings'
     }
 ]
