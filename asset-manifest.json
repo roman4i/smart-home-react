@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/smart-home-react/static/css/main.79f847d5.css",
-    "main.js": "/smart-home-react/static/js/main.8f485996.js",
+    "main.js": "/smart-home-react/static/js/main.062ba37f.js",
     "static/media/lamps-ext.png": "/smart-home-react/static/media/lamps-ext.82c9719a3ee4d1cdb03d.png",
     "index.html": "/smart-home-react/index.html",
     "main.79f847d5.css.map": "/smart-home-react/static/css/main.79f847d5.css.map",
-    "main.8f485996.js.map": "/smart-home-react/static/js/main.8f485996.js.map"
+    "main.062ba37f.js.map": "/smart-home-react/static/js/main.062ba37f.js.map"
   },
   "entrypoints": [
     "static/css/main.79f847d5.css",
-    "static/js/main.8f485996.js"
+    "static/js/main.062ba37f.js"
   ]
 }
