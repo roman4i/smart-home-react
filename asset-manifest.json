@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/roman4i/smart-home-react/static/css/main.7355bde5.css",
+    "main.js": "/roman4i/smart-home-react/static/js/main.8f485996.js",
+    "static/media/lamps-ext.png": "/roman4i/smart-home-react/static/media/lamps-ext.82c9719a3ee4d1cdb03d.png",
+    "index.html": "/roman4i/smart-home-react/index.html",
+    "main.7355bde5.css.map": "/roman4i/smart-home-react/static/css/main.7355bde5.css.map",
+    "main.8f485996.js.map": "/roman4i/smart-home-react/static/js/main.8f485996.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7355bde5.css",
+    "static/js/main.8f485996.js"
+  ]
+}
